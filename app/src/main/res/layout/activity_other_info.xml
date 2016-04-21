@@ -49,128 +49,159 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="姓名"
+                        android:text="身高"
                         android:textSize="25dp" />
 
                     <EditText
-                        android:id="@+id/name"
-                        android:layout_width="190dp"
+                        android:id="@+id/ehight"
+                        android:layout_width="100dp"
                         android:layout_height="70dp"
-                        android:layout_alignParentRight="true"
-                        android:imeOptions="actionNext"
                         android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/height"
                         android:background="@drawable/bg_login_input"
                         android:gravity="center_vertical|right"
+                        android:imeOptions="actionNext"
+                        android:maxLength="3"
+                        android:padding="10dp"
+                        android:inputType="number"
+                        android:text=""
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:id="@+id/height"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="cm        "
+                        android:textSize="25dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_conner_wcolor"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="体重"
+                        android:textSize="25dp" />
+
+                    <EditText
+                        android:id="@+id/eweight"
+                        android:inputType="number"
+                        android:layout_width="100dp"
+
+                        android:layout_height="70dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/weight"
+                        android:background="@drawable/bg_login_input"
+                        android:gravity="center_vertical|right"
+                        android:imeOptions="actionNext"
+                        android:maxLength="3"
+                        android:padding="10dp"
+                        android:text=""
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:id="@+id/weight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="kg          "
+                        android:textSize="25dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_conner_wcolor"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="血糖"
+                        android:textSize="25dp" />
+
+                    <EditText
+                        android:id="@+id/ebloodsugar"
+                        android:layout_width="100dp"
+                        android:inputType="numberDecimal"
+                        android:layout_height="70dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/bloodsugar"
+                        android:background="@drawable/bg_login_input"
+                        android:gravity="center_vertical|right"
+                        android:imeOptions="actionNext"
+                        android:maxLength="7"
+                        android:padding="10dp"
+                        android:text=""
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:id="@+id/bloodsugar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="mmol/L"
+                        android:textSize="25dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_conner_wcolor"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="血压"
+                        android:textSize="25dp" />
+
+                    <EditText
+                        android:id="@+id/ebloodpressure"
+                        android:layout_width="100dp"
+                        android:layout_height="70dp"
+                        android:inputType="number"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/bloodpressure"
+                        android:background="@drawable/bg_login_input"
+                        android:gravity="center_vertical|right"
+                        android:imeOptions="actionNext"
                         android:maxLength="5"
                         android:padding="10dp"
                         android:text=""
                         android:textSize="30dp" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/bg_conner_wcolor"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp">
 
                     <TextView
+                        android:id="@+id/bloodpressure"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="性别"
-                        android:textSize="25dp" />
-
-                    <LinearLayout
-                        android:layout_width="200dp"
-                        android:layout_height="100dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true">
-
-                        <CheckBox
-                            android:id="@+id/man"
-                            android:layout_width="90dp"
-                            android:layout_height="90dp"
-                            android:background="@drawable/checkbox_selector"
-                            android:button="@null"
-                            android:checked="true"
-                            android:gravity="center"
-                            android:text="男"
-                            android:textColor="@drawable/checkbox_text_selector"
-                            android:textSize="30dp" />
-
-                        <CheckBox
-                            android:id="@+id/woman"
-                            android:layout_width="90dp"
-                            android:layout_height="90dp"
-                            android:layout_marginLeft="5dp"
-                            android:background="@drawable/checkbox_selector"
-                            android:button="@null"
-                            android:gravity="center"
-                            android:text="女"
-                            android:textColor="@drawable/checkbox_text_selector"
-                            android:textSize="30dp" />
-                    </LinearLayout>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/bg_conner_wcolor"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="手机"
-                        android:textSize="25dp" />
-
-                    <EditText
-                        android:id="@+id/mobile"
-                        android:layout_width="250dp"
-                        android:layout_height="70dp"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
-                        android:background="@drawable/bg_login_input"
-                        android:imeOptions="actionNext"
-                        android:gravity="center_vertical|right"
-                        android:inputType="number"
-                        android:maxLength="11"
-                        android:padding="10dp"
-                        android:textSize="30dp" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/bg_conner_wcolor"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="出生"
+                        android:layout_marginLeft="10dp"
+                        android:text="mmhg   "
                         android:textSize="25dp" />
-
-                    <Button
-                        android:id="@+id/birthday"
-                        android:layout_width="250dp"
-                        android:layout_height="70dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:background="@drawable/bg_login_input"
-                        android:gravity="center_vertical|right"
-                        android:maxLength="11"
-                        android:padding="10dp"
-                        android:textSize="30dp" />
                 </RelativeLayout>
+
 
             </LinearLayout>
 

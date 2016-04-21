@@ -18,43 +18,44 @@ public class DataBaseTest {
     @DatabaseField(columnName = NAME)
     public String name;//c测试题目
     @DatabaseField()
-    public int ph_no=0;//平和-没有
+    public int ph_no;//平和-没有
     @DatabaseField()
-    public int ph_has=0;//平和-经常
+    public int ph_has;//平和-经常
     @DatabaseField()
-    public int qx_no=0;//气虚-没有
+    public int qx_no;//气虚-没有
     @DatabaseField()
-    public int qx_has=0;//气虚-经常
+    public int qx_has;//气虚-经常
     @DatabaseField()
-    public int xx_no=0;//血虚-没有
+    public int xx_no;//血虚-没有
     @DatabaseField()
-    public int xx_has=0;//血虚-经常
+    public int xx_has;//血虚-经常
     @DatabaseField()
-    public int yinx_no=0;//阴虚-没有
+    public int yinx_no;//阴虚-没有
     @DatabaseField()
-    public int yinx_has=0;//阴虚-经常
+    public int yinx_has;//阴虚-经常
     @DatabaseField()
-    public int yangx_no=0;//阳虚-没有
+    public int yangx_no;//阳虚-没有
     @DatabaseField()
-    public int yang_has=0;//阳虚-经常
+    public int yang_has;//阳虚-经常
     @DatabaseField()
-    public int qy_no=0;//气郁-没有
+    public int qy_no;//气郁-没有
     @DatabaseField()
-    public int qy_has=0;//气郁-经常
+    public int qy_has;//气郁-经常
     @DatabaseField()
-    public int xy_no=0;//血淤-没有
+    public int xy_no;//血淤-没有
     @DatabaseField()
-    public int xy_has=0;//血淤-经常
+    public int xy_has;//血淤-经常
     @DatabaseField()
-    public int ts_no=0;//痰湿-没有
+    public int ts_no;//痰湿-没有
     @DatabaseField()
-    public int ts_has=0;//痰湿-经常
+    public int ts_has;//痰湿-经常
     @DatabaseField()
-    public int sr_no=0;//湿热-没有
+    public int sr_no;//湿热-没有
     @DatabaseField()
-    public int sr_has=0;//湿热-经常
+    public int sr_has;//湿热-经常
     @DatabaseField()
-    public int hr_no=0;//火热-没有
+    public int hr_no;//火热-没有
     @DatabaseField()
-    public int hr_has=0;//火热-经常
+    public int hr_has;//火热-经常
+    public String isno;
 }

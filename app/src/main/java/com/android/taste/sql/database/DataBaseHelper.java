@@ -18,8 +18,8 @@ import java.sql.SQLException;
  * Created by wx on 2015/12/3.
  */
 public class DataBaseHelper extends OrmLiteSqliteOpenHelper {
-    public static final String DATABASE_NAME = "pushMessage.db";
-    private static final int DATABASE_VERSON = 2;
+    public static final String DATABASE_NAME = "test.db";
+    private static final int DATABASE_VERSON = 1;
 
     public DataBaseHelper(Context context, String databaseName, SQLiteDatabase.CursorFactory factory, int databaseVersion) {
         super(context, databaseName, factory, databaseVersion);
@@ -38,7 +38,6 @@ public class DataBaseHelper extends OrmLiteSqliteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase, ConnectionSource connectionSource) {
         try {
             Log.e("wangxu", "onCreate");
-
             TableUtils.createTable(connectionSource, DataBaseUser.class);
             TableUtils.createTable(connectionSource, DataBaseTest.class);
             TableUtils.createTable(connectionSource, DataBaseSeting.class);
@@ -54,7 +53,7 @@ public class DataBaseHelper extends OrmLiteSqliteOpenHelper {
     }
 
 
-    public Dao<DataBaseUser, Integer> getMessageDoa() throws SQLException {
+    public Dao<DataBaseUser, Integer> getDataBaseUser() throws SQLException {
         return getDao(DataBaseUser.class);
     }
 

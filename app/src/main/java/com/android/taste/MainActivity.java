@@ -6,8 +6,10 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.android.taste.personal.BaseInfoActivity;
 import com.android.taste.sql.database.bean.DataBaseTest;
@@ -18,6 +20,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
@@ -52,7 +56,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         personal.setOnClickListener(this);
         setting.setOnClickListener(this);
         group.setOnClickListener(this);
-        if (new DataBaseUtil(this).getTestCount()==0){
+        if (new DataBaseUtil(this).getTestCount() == 0) {
             showDialog("正在初始化数据");
             new Thread(new Runnable() {
                 @Override
@@ -76,7 +80,19 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             case R.id.personal:
                 MainActivity.this.startActivity(new Intent(MainActivity.this, BaseInfoActivity.class));
                 break;
+            default:
+                Toast.makeText(MainActivity.this, "该功能暂未开放", Toast.LENGTH_LONG).show();
+                break;
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MyApplication.userList=null;
+        MyApplication.pageList=null;
+        MyApplication.allList=null;
+        MyApplication.user=null;
     }
 
     public void readText() {
@@ -118,13 +134,40 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 list.add(test);
             }
             new DataBaseUtil(MainActivity.this).saveDrugList(list);
-        } catch (
-                IOException e
-                )
-
-        {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // TODO Auto-generated method stub
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            exitBy2Click(); //调用双击退出函数
+        }
+        return false;
+    }
+    /**
+     * 双击退出函数
+     */
+    private static Boolean isExit = false;
+
+    private void exitBy2Click() {
+        Timer tExit = null;
+        if (isExit == false) {
+            isExit = true; // 准备退出
+            Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+            tExit = new Timer();
+            tExit.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    isExit = false; // 取消退出
+                }
+            }, 2000); // 如果2秒钟内没有按下返回键，则启动定时器取消掉刚才执行的任务
+
+        } else {
+            finish();
+            System.exit(0);
+        }
+    }
 }
